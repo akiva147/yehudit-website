@@ -5,6 +5,6 @@ export interface HomePageProps {}
 export const HomePage = (props: HomePageProps) => {
 	
 	return (
-		<div></div>
+		<div>hello world</div>
 	);
 };
