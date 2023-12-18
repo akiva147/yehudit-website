@@ -1,0 +1,16 @@
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    & > header {
+        width: 60%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        & > h1 {
+            font-size: 3rem;
+            font-weight: 300;
+        }
+    }
+}

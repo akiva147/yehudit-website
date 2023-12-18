@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    a {
+        color: inherit;
+    }
+    h2 {
+        cursor: pointer;
+        font-weight: 300;
+    }
+    h2:hover {
+        transition-duration: 400ms;
+        transition-timing-function: ease-in-out;
+        color: lighten($color: black, $amount: 40%);
+    }
+    .pages {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        gap: 2rem;
+    }
+    // margin-inline: 1rem;
+    // flex-direction: row;
+}
