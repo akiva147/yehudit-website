@@ -20,7 +20,10 @@ export const NavBar = (props: NavBarProps) => {
                 >
                     <h2>RESUME</h2>
                 </a>
-                <a href="https://www.linkedin.com/" target="_blank">
+                <a
+                    href="https://www.linkedin.com/in/yehudit-levi-5872a71a9?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+                    target="_blank"
+                >
                     <LinkedinOutlined />
                 </a>
                 <a
