@@ -1,17 +1,24 @@
 .container {
     display: flex;
     width: 100%;
+    align-items: center;
     justify-content: space-between;
+
     a {
+        display: flex;
         color: inherit;
+        padding: 0;
+        text-decoration: none;
     }
     h2 {
         cursor: pointer;
         font-weight: 300;
     }
-    h2:hover {
-        transition-duration: 400ms;
+    h2:hover,
+    a:hover {
+        transition-duration: 300ms;
         transition-timing-function: ease-in-out;
+        color: lighten($color: black, $amount: 40%);
         color: lighten($color: black, $amount: 40%);
     }
     .pages {
@@ -20,6 +27,21 @@
         align-items: center;
         gap: 2rem;
     }
-    // margin-inline: 1rem;
-    // flex-direction: row;
+
+    @media (max-width: 760px) {
+        h2 {
+            font-size: 1rem;
+        }
+        .pages {
+            gap: 1rem;
+        }
+    }
+    @media (max-width: 430px) {
+        h2 {
+            font-size: 0.8rem;
+        }
+        .pages {
+            gap: 0.2rem;
+        }
+    }
 }

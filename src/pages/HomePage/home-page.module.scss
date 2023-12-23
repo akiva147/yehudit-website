@@ -1,16 +1,85 @@
 .container {
     width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: start;
+    flex-direction: column;
+
     & > header {
-        width: 60%;
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
+        padding: 1rem;
+
         & > h1 {
-            font-size: 3rem;
-            font-weight: 300;
+            font-size: 4rem;
+            font-weight: 200;
+            text-align: start;
         }
+    }
+    & > main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        & > .project {
+            display: flex;
+            justify-content: center;
+            width: 80%;
+            height: 100%;
+            gap: 1rem;
+            cursor: pointer;
+            & > img {
+                overflow: auto;
+                max-width: 100%;
+            }
+            & > .displayCard {
+                max-width: 20%;
+                min-width: 20%;
+                & > * {
+                    margin: 0.5rem;
+                }
+                display: flex;
+                opacity: 0;
+                padding: {
+                    block: 1rem;
+                    inline: 2rem;
+                }
+                flex-direction: column;
+                align-items: flex-start;
+                border-radius: 0.5rem;
+                background-color: #fafafa;
+            }
+        }
+        & > .project:hover {
+            .displayCard {
+                opacity: 1;
+                transition: ease-in-out;
+                transition-duration: 200ms;
+            }
+        }
+    }
+    @media (max-width: 1000px) {
+        & > header {
+            & > h1 {
+                font-size: 3rem;
+            }
+        }
+        & > main {
+            & > .project {
+                width: 100%;
+            }
+        }
+    }
+    @media (max-width: 760px) {
+        & > header {
+            & > h1 {
+                font-size: 2rem;
+            }
+        }
+    }
+}
+
+:global {
+    .ant-image-mask {
+        border-radius: 0.5rem;
     }
 }

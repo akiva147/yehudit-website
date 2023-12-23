@@ -1,24 +1,33 @@
 import { DribbbleOutlined, LinkedinOutlined } from '@ant-design/icons'
 import classes from './nav-bar.module.scss'
-import { useNavigation } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 export interface NavBarProps {}
 
 export const NavBar = (props: NavBarProps) => {
-    const navigation = useNavigation()
+    const navigate = useNavigate()
 
     return (
         <div className={classes.container}>
-            <h2>Yehudit Levi</h2>
+            <h2 onClick={() => navigate('/')}>Yehudit Levi</h2>
             <div className={classes.pages}>
-                <h2>WORK</h2>
-                <h2>ABOUT</h2>
-                <h2>RESUME</h2>
+                <h2 onClick={() => navigate('/')}>WORK</h2>
+                <h2 onClick={() => navigate('/about')}>ABOUT</h2>
+                <a
+                    href={'Yehudit Levi-Resume.pdf'}
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    <h2>RESUME</h2>
+                </a>
                 <a href="https://www.linkedin.com/" target="_blank">
                     <LinkedinOutlined />
                 </a>
-                <a href="https://dribbble.com/" target="_blank">
-                    <DribbbleOutlined />
+                <a
+                    href="https://www.behance.net/yehuditlevi1/projects"
+                    target="_blank"
+                >
+                    <img src="Behance-logo.svg" />
                 </a>
             </div>
         </div>

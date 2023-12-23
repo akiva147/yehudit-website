@@ -3,6 +3,8 @@ import './App.css'
 import { HomePage } from './pages/HomePage'
 import { ErrorPage } from './pages/ErrorPage'
 import Root from './routes/Root/Root'
+import { AboutPage } from './pages/AboutPage'
+import { GlobalProvider } from './providers/GlobalProvider'
 
 const router = createBrowserRouter([
     {
@@ -14,12 +16,20 @@ const router = createBrowserRouter([
                 path: '/',
                 element: <HomePage />,
             },
+            {
+                path: '/about',
+                element: <AboutPage />,
+            },
         ],
     },
 ])
 
 function App() {
-    return <RouterProvider router={router} />
+    return (
+        <GlobalProvider>
+            <RouterProvider router={router} />
+        </GlobalProvider>
+    )
 }
 
 export default App
