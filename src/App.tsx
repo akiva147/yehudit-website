@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
 import './App.css'
 import { HomePage } from './pages/HomePage'
 import { ErrorPage } from './pages/ErrorPage'
@@ -14,7 +14,7 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
         children: [
             {
-                path: '/',
+                index: true,
                 element: <HomePage />,
             },
             {
@@ -24,6 +24,10 @@ const router = createBrowserRouter([
             {
                 path: '/subtitles-system',
                 element: <SubtitlesSystem />,
+            },
+            {
+                path: '*',
+                element: <Navigate to={'/'} replace />,
             },
         ],
     },
