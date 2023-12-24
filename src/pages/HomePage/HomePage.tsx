@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import { useSize } from '../../hooks/useSize'
 import classes from './home-page.module.scss'
 
@@ -5,6 +6,7 @@ export interface HomePageProps {}
 
 export const HomePage = (props: HomePageProps) => {
     const { width } = useSize()
+    const navigate = useNavigate()
 
     return (
         <div className={classes.container}>
@@ -14,7 +16,10 @@ export const HomePage = (props: HomePageProps) => {
                 </h1>
             </header>
             <main>
-                <div className={classes.project}>
+                <div
+                    className={classes.project}
+                    onClick={() => navigate('/subtitles-system')}
+                >
                     {width >= 1600 && (
                         <div className={classes.displayCard}>
                             <h2>Subtitles System Design</h2>
@@ -22,7 +27,10 @@ export const HomePage = (props: HomePageProps) => {
                             <h3>UX UI Design</h3>
                         </div>
                     )}
-                    <img src="SubtitleSystemDesign.png" />
+                    <img
+                        src="SubtitleSystemDesign.png"
+                        alt="Subtitle System Design"
+                    />
                 </div>
             </main>
         </div>

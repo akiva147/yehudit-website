@@ -5,6 +5,7 @@ import { ErrorPage } from './pages/ErrorPage'
 import Root from './routes/Root/Root'
 import { AboutPage } from './pages/AboutPage'
 import { GlobalProvider } from './providers/GlobalProvider'
+import { SubtitlesSystem } from './pages/SubtitlesSystem'
 
 const router = createBrowserRouter([
     {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
             {
                 path: '/about',
                 element: <AboutPage />,
+            },
+            {
+                path: '/subtitles-system',
+                element: <SubtitlesSystem />,
             },
         ],
     },

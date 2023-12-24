@@ -27,10 +27,6 @@
             height: 100%;
             gap: 1rem;
             cursor: pointer;
-            & > img {
-                overflow: auto;
-                max-width: 100%;
-            }
             & > .displayCard {
                 max-width: 20%;
                 min-width: 20%;
