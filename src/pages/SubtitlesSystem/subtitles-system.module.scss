@@ -52,4 +52,13 @@
         width: 100%;
         gap: 1rem;
     }
+    @media (max-width: 1200px) {
+        padding: 5rem;
+    }
+    @media (max-width: 760px) {
+        padding: 2rem;
+    }
+    @media (max-width: 430px) {
+        padding: 0rem;
+    }
 }

@@ -1,11 +1,11 @@
 import { useNavigate } from 'react-router-dom'
-import { useSize } from '../../hooks/useSize'
+import { useScreenSize } from '../../hooks/useSize'
 import classes from './home-page.module.scss'
 
 export interface HomePageProps {}
 
 export const HomePage = (props: HomePageProps) => {
-    const { width } = useSize()
+    const { width } = useScreenSize()
     const navigate = useNavigate()
 
     return (

@@ -1,9 +1,12 @@
 import { Image } from 'antd'
 import classes from './subtitles-system.module.scss'
+import { useScreenSize } from '../../hooks/useSize'
 
 export interface SubtitlesSystemProps {}
 
 export const SubtitlesSystem = (props: SubtitlesSystemProps) => {
+    const { width } = useScreenSize()
+
     return (
         <div className={classes.container}>
             <Image.PreviewGroup>
