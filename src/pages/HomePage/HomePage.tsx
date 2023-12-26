@@ -28,7 +28,7 @@ export const HomePage = (props: HomePageProps) => {
                         </div>
                     )}
                     <img
-                        src="SubtitleSystemDesign.png"
+                        src="/subtitlesSystem/SubtitleSystemDesign.png"
                         alt="Subtitle System Design"
                     />
                 </div>

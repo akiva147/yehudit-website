@@ -34,7 +34,6 @@
                     margin: 0.5rem;
                 }
                 display: flex;
-                opacity: 0;
                 padding: {
                     block: 1rem;
                     inline: 2rem;
@@ -43,13 +42,6 @@
                 align-items: flex-start;
                 border-radius: 0.5rem;
                 background-color: #fafafa;
-            }
-        }
-        & > .project:hover {
-            .displayCard {
-                opacity: 1;
-                transition: ease-in-out;
-                transition-duration: 200ms;
             }
         }
     }

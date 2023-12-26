@@ -14,7 +14,7 @@ export const NavBar = (props: NavBarProps) => {
                 <h2 onClick={() => navigate('/')}>WORK</h2>
                 <h2 onClick={() => navigate('/about')}>ABOUT</h2>
                 <a
-                    href={'Yehudit Levi-Resume.pdf'}
+                    href={'/general/Yehudit Levi-Resume.pdf'}
                     target="_blank"
                     rel="noreferrer"
                 >
@@ -30,7 +30,7 @@ export const NavBar = (props: NavBarProps) => {
                     href="https://www.behance.net/yehuditlevi1/projects"
                     target="_blank"
                 >
-                    <img src="Behance-logo.svg" />
+                    <img src="/general/Behance-logo.svg" />
                 </a>
             </div>
         </div>

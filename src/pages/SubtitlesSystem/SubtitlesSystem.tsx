@@ -1,6 +1,14 @@
-import { Image } from 'antd'
+import { Button, Image } from 'antd'
 import classes from './subtitles-system.module.scss'
 import { useScreenSize } from '../../hooks/useSize'
+import {
+    SolutionsNDesignsArr,
+    bigScreensArr,
+    smallScreensArr,
+} from './subtitlesSystem.conts'
+import { SolutionNDesign } from '../../components/SolutionsNDesigns'
+import { Screen } from '../../components/Screen'
+import { UpOutlined } from '@ant-design/icons'
 
 export interface SubtitlesSystemProps {}
 
@@ -19,7 +27,7 @@ export const SubtitlesSystem = (props: SubtitlesSystemProps) => {
                     </p>
                 </header>
                 <Image
-                    src="SubtitleSystemDesign.png"
+                    src="/subtitlesSystem/SubtitleSystemDesign.png"
                     alt="Subtitle System Design"
                 />
                 <section>
@@ -48,57 +56,52 @@ export const SubtitlesSystem = (props: SubtitlesSystemProps) => {
                         storage capacity.
                     </p>
                 </section>
-                <Image src="SubtitleRoom.png" alt="Subtitle Room" />
+                <Image
+                    src="/subtitlesSystem/SubtitleRoom.png"
+                    alt="Subtitle Room"
+                />
                 <section>
                     <h1>User Research</h1>
-                    <div className={classes.lists}>
-                        <div className={classes.list}>
-                            <strong>
-                                Challenges Identified Through User Research
-                            </strong>
-                            <ul>
-                                <li>
-                                    Prolonged Use Discomfort: Strong red color
-                                    of selected slide
-                                </li>
-                                <li>
-                                    Limited Search Capabilities: Finding
-                                    specific study material time-consuming
-                                </li>
-                                <li>
-                                    "Questions" Mode Issues: Manual confirmation
-                                    of translation updates and Unclear
-                                    distinction between "delete" and "next
-                                    question"
-                                </li>
-                                <li>
-                                    Navigation Problems: Small, inconveniently
-                                    placed buttons causing confusion
-                                </li>
-                                <li>
-                                    Remote Monitoring Difficulties: Unable to
-                                    confirm successful broadcast remotely
-                                </li>
-                            </ul>
-                        </div>
-                        <span className={classes.verticalLine}></span>
-                        <div className={classes.list}>
-                            <strong>User KPIs</strong>
-                            <ul>
-                                <li>
-                                    Intuitive System to reduce cognitive load
-                                    and enhance overall user experience
-                                </li>
-                                <li>
-                                    Optimized Color Schemes for Prolonged Use
-                                </li>
-                                <li>Enhanced System Navigation</li>
-                                <li>Efficient Search Functionality</li>
-                                <li>
-                                    Enable Remote Monitoring of Live Broadcasts
-                                </li>
-                            </ul>
-                        </div>
+                    <div className={classes.list}>
+                        <strong>
+                            Challenges Identified Through User Research
+                        </strong>
+                        <ul>
+                            <li>
+                                Prolonged Use Discomfort: Strong red color of
+                                selected slide
+                            </li>
+                            <li>
+                                Limited Search Capabilities: Finding specific
+                                study material time-consuming
+                            </li>
+                            <li>
+                                "Questions" Mode Issues: Manual confirmation of
+                                translation updates and Unclear distinction
+                                between "delete" and "next question"
+                            </li>
+                            <li>
+                                Navigation Problems: Small, inconveniently
+                                placed buttons causing confusion
+                            </li>
+                            <li>
+                                Remote Monitoring Difficulties: Unable to
+                                confirm successful broadcast remotely
+                            </li>
+                        </ul>
+                    </div>
+                    <div className={classes.list}>
+                        <strong>User KPIs</strong>
+                        <ul>
+                            <li>
+                                Intuitive System to reduce cognitive load and
+                                enhance overall user experience
+                            </li>
+                            <li>Optimized Color Schemes for Prolonged Use</li>
+                            <li>Enhanced System Navigation</li>
+                            <li>Efficient Search Functionality</li>
+                            <li>Enable Remote Monitoring of Live Broadcasts</li>
+                        </ul>
                     </div>
                 </section>
                 <section>
@@ -121,11 +124,75 @@ export const SubtitlesSystem = (props: SubtitlesSystemProps) => {
                         <li>Lack of study material title during scrolling</li>
                     </ol>
                 </section>
-                <Image src="OldSubtitleSystem.png" alt="Old Subtitle System" />
+                <Image
+                    src="/subtitlesSystem/OldSubtitleSystem.png"
+                    alt="Old Subtitle System"
+                />
                 <section>
                     <h1>Solutions & Designs</h1>
+                    {SolutionsNDesignsArr.map(
+                        ({ imageSrc, title, list, order }) => (
+                            <SolutionNDesign
+                                imageSrc={imageSrc}
+                                title={title}
+                                list={list}
+                                order={order}
+                                key={crypto.randomUUID()}
+                            />
+                        )
+                    )}
                 </section>
+                <section>
+                    <h1 style={{ margin: 0 }}>Typography & Colors</h1>
+                    <h2>Nunito</h2>
+                    <div className={classes.colorSizes}>
+                        <strong>Bold</strong>
+                        <img
+                            src="/general/Ellipse.svg"
+                            alt="Ellipse"
+                            style={{ height: '.8rem', width: '2rem' }}
+                        />
+                        <p>Medium</p>
+                        <img
+                            src="general/Ellipse.svg"
+                            alt="Ellipse"
+                            style={{ height: '.8rem', width: '2rem' }}
+                        />
+                        <p className={classes.light}>Light</p>
+                    </div>
+                    <Image src="/subtitlesSystem/Colors_1.png" alt="colors 1" />
+                    <Image src="/subtitlesSystem/Colors_2.png" alt="colors 2" />
+                </section>
+                <section>
+                    <h1>Screens</h1>
+                    <section className={classes.bigScreens}>
+                        {bigScreensArr.map(({ imageSrc, title }) => (
+                            <Screen
+                                imageSrc={imageSrc}
+                                title={title}
+                                key={crypto.randomUUID()}
+                            />
+                        ))}
+                    </section>
+                    <section className={classes.smallScreens}>
+                        {smallScreensArr.map(({ imageSrc, title }) => (
+                            <Screen
+                                imageSrc={imageSrc}
+                                title={title}
+                                key={crypto.randomUUID()}
+                            />
+                        ))}
+                    </section>
+                </section>
+                <div className={classes.Screens}></div>
             </Image.PreviewGroup>
+            <Button
+                className={classes.goUpButton}
+                icon={<UpOutlined />}
+                onClick={() =>
+                    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+                }
+            />
         </div>
     )
 }
