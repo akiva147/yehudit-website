@@ -1,8 +1,8 @@
 import { Screen, SolutionNDesign } from '../../types/subtitlesSystem.type'
 
-export const SolutionsNDesignsArr: SolutionNDesign[] = [
+export const getSolutionsNDesignsArr = (images: object): SolutionNDesign[] => [
     {
-        imageSrc: '/subtitlesSystem/SubtitleLaptop_1.png',
+        imageSrc: images['SubtitleLaptop_1.png'],
         title: 'Active Subtitles - Main page',
         list: (
             <ul>
@@ -24,7 +24,7 @@ export const SolutionsNDesignsArr: SolutionNDesign[] = [
         order: 'normal',
     },
     {
-        imageSrc: '/subtitlesSystem/SubtitleLaptop_2.png',
+        imageSrc: images['SubtitleLaptop_2.png'],
         title: 'Active Questions - Main page',
         list: (
             <ul>
@@ -43,7 +43,7 @@ export const SolutionsNDesignsArr: SolutionNDesign[] = [
         order: 'reversed',
     },
     {
-        imageSrc: '/subtitlesSystem/SubtitleLaptop_3.png',
+        imageSrc: images['SubtitleLaptop_3.png'],
         title: 'Search in text',
         list: (
             <ul>
@@ -53,7 +53,7 @@ export const SolutionsNDesignsArr: SolutionNDesign[] = [
         order: 'normal',
     },
     {
-        imageSrc: '/subtitlesSystem/SubtitleLaptop_4.png',
+        imageSrc: images['SubtitleLaptop_4.png'],
         title: 'Quick Dropdown for Archive Search',
         list: (
             <ul>
@@ -63,7 +63,7 @@ export const SolutionsNDesignsArr: SolutionNDesign[] = [
         order: 'reversed',
     },
     {
-        imageSrc: '/subtitlesSystem/SubtitleLaptop_5.png',
+        imageSrc: images['SubtitleLaptop_5.png'],
         title: 'Archive page - Functionality',
         list: (
             <ul>
@@ -82,7 +82,7 @@ export const SolutionsNDesignsArr: SolutionNDesign[] = [
         order: 'normal',
     },
     {
-        imageSrc: '/subtitlesSystem/SubtitleLaptop_6.png',
+        imageSrc: images['SubtitleLaptop_6.png'],
         title: 'Archive page',
         list: (
             <ul>
@@ -95,7 +95,7 @@ export const SolutionsNDesignsArr: SolutionNDesign[] = [
         order: 'reversed',
     },
     {
-        imageSrc: '/subtitlesSystem/SubtitleLaptop_7.png',
+        imageSrc: images['SubtitleLaptop_7.png'],
         title: 'New Subtitle page',
         list: (
             <ul>
@@ -116,77 +116,68 @@ export const SolutionsNDesignsArr: SolutionNDesign[] = [
     },
 ]
 
-export const bigScreensArr: Screen[] = [
+export const getBigScreensArr = (images: object): Screen[] => [
     {
-        imageSrc: '/subtitlesSystem/screens/big/Main page Active Subtitles.png',
+        imageSrc: images['Main page Active Subtitles.png'],
         title: 'Main page / Active Subtitles',
     },
     {
-        imageSrc: '/subtitlesSystem/screens/big/Quick search Main page.png',
+        imageSrc: images['Quick search Main page.png'],
         title: 'Quick search / Main page',
     },
     {
-        imageSrc: '/subtitlesSystem/screens/big/Main page Offline tab.png',
+        imageSrc: images['Main page Offline tab.png'],
         title: 'Main page / Offline tab',
     },
     {
         imageSrc:
-            '/subtitlesSystem/screens/big/Main page close live broadcast  Open slides numbers.png',
+            images['Main page close live broadcast  Open slides numbers.png'],
         title: 'Main page / close live broadcast /  Open slides numbers',
     },
     {
-        imageSrc:
-            '/subtitlesSystem/screens/big/Main page Active Subtitles_2.png',
+        imageSrc: images['Main page Active Subtitles_2.png'],
         title: 'Main page / Active Subtitles',
     },
     {
-        imageSrc: '/subtitlesSystem/screens/big/Main page Quick search.png',
+        imageSrc: images['Main page Quick search.png'],
         title: 'Main page / Quick search',
     },
 ]
-export const smallScreensArr: Screen[] = [
+export const getSmallScreensArr = (images: object): Screen[] => [
     {
-        imageSrc:
-            '/subtitlesSystem/screens/small/Main page Active Questions.png',
+        imageSrc: images['Main page Active Questions.png'],
         title: 'Main page / Active Questions',
     },
     {
-        imageSrc:
-            '/subtitlesSystem/screens/small/Main page Active Questions Invisible question.png',
+        imageSrc: images['Main page Active Questions Invisible question.png'],
         title: 'Main page / Active Questions / Invisible question',
     },
     {
-        imageSrc:
-            '/subtitlesSystem/screens/small/Main page Active Questions Archive drop down.png',
+        imageSrc: images['Main page Active Questions Archive drop down.png'],
         title: 'Main page / Active Questions / Archive drop down',
     },
     {
-        imageSrc:
-            '/subtitlesSystem/screens/small/Archive page Titles Preview on Hover.png',
+        imageSrc: images['Archive page Titles Preview on Hover.png'],
         title: 'Archive page / Titles Preview on Hover',
     },
     {
-        imageSrc:
-            '/subtitlesSystem/screens/small/Archive page “Delete” pop up.png',
+        imageSrc: images['Archive page “Delete” pop up.png'],
         title: 'Archive page / “Delete” pop up',
     },
     {
-        imageSrc:
-            '/subtitlesSystem/screens/small/Archive page Saved successfully message.png',
+        imageSrc: images['Archive page Saved successfully message.png'],
         title: 'Archive page / Saved successfully message',
     },
     {
-        imageSrc: '/subtitlesSystem/screens/small/New subtitle page.png',
+        imageSrc: images['New subtitle page.png'],
         title: 'New subtitle page',
     },
     {
-        imageSrc:
-            '/subtitlesSystem/screens/small/New subtitle page Uploading file.png',
+        imageSrc: images['New subtitle page Uploading file.png'],
         title: 'New subtitle page / Uploading file',
     },
     {
-        imageSrc:
-            '/subtitlesSystem/screens/small/New subtitle page Question.png',
+        imageSrc: images['New subtitle page Question.png'],
         title: 'New subtitle page / Question',
     },
 ]

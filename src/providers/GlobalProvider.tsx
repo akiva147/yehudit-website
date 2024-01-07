@@ -1,10 +1,15 @@
 import { ConfigProvider } from 'antd'
 import locale from 'antd/locale/he_IL'
-
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 export interface GlobalProviderProps {
     children: React.ReactElement
 }
 
 export const GlobalProvider = ({ children }: GlobalProviderProps) => {
-    return <ConfigProvider locale={locale}>{children}</ConfigProvider>
+    const queryClient = new QueryClient()
+    return (
+        <QueryClientProvider client={queryClient}>
+            <ConfigProvider locale={locale}>{children}</ConfigProvider>
+        </QueryClientProvider>
+    )
 }

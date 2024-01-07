@@ -1,23 +1,38 @@
-import { Button, Image } from 'antd'
-import classes from './subtitles-system.module.scss'
+import { Button, Image as AntdImage } from 'antd'
 import { useScreenSize } from '../../hooks/useSize'
 import {
-    SolutionsNDesignsArr,
-    bigScreensArr,
-    smallScreensArr,
+    getBigScreensArr,
+    getSmallScreensArr,
+    getSolutionsNDesignsArr,
 } from './subtitlesSystem.conts'
 import { SolutionNDesign } from '../../components/SolutionsNDesigns'
 import { Screen } from '../../components/Screen'
 import { UpOutlined } from '@ant-design/icons'
+import { useQuery } from '@tanstack/react-query'
+import classes from './subtitles-system.module.scss'
+import { LoadingImage } from '@/components/LoadingImage'
+import { imageService } from '@/services/image.service'
+import { useMemo } from 'react'
+import { Image } from '@/types/subtitlesSystem.type'
 
 export interface SubtitlesSystemProps {}
 
 export const SubtitlesSystem = (props: SubtitlesSystemProps) => {
+    const { data, isLoading } = useQuery({
+        queryKey: ['subtitlesSystem'],
+        queryFn: async () =>
+            await imageService.getImagesByPrefix(
+                '/yehudit-webtite/subtitlesSystem/'
+            ),
+    })
+
+    const images = useMemo(() => (data ? data : []), [data])
+
     const { width } = useScreenSize()
 
     return (
         <div className={classes.container}>
-            <Image.PreviewGroup>
+            <AntdImage.PreviewGroup>
                 <header>
                     <h1> Subtitles system</h1>
                     <h4>Global Kabbalah Academy</h4>
@@ -26,8 +41,9 @@ export const SubtitlesSystem = (props: SubtitlesSystemProps) => {
                         Desktop project
                     </p>
                 </header>
-                <Image
-                    src="/subtitlesSystem/SubtitleSystemDesign.png"
+                <LoadingImage
+                    isLoading={!data}
+                    src={images['SubtitleSystemDesign.png']}
                     alt="Subtitle System Design"
                 />
                 <section>
@@ -56,8 +72,9 @@ export const SubtitlesSystem = (props: SubtitlesSystemProps) => {
                         storage capacity.
                     </p>
                 </section>
-                <Image
-                    src="/subtitlesSystem/SubtitleRoom.png"
+                <LoadingImage
+                    isLoading={!data}
+                    src={images['SubtitleRoom.png']}
                     alt="Subtitle Room"
                 />
                 <section>
@@ -124,15 +141,18 @@ export const SubtitlesSystem = (props: SubtitlesSystemProps) => {
                         <li>Lack of study material title during scrolling</li>
                     </ol>
                 </section>
-                <Image
-                    src="/subtitlesSystem/OldSubtitleSystem.png"
+                <LoadingImage
+                    isLoading={!data}
+                    src={images['OldSubtitleSystem.png']}
                     alt="Old Subtitle System"
                 />
+
                 <section>
                     <h1>Solutions & Designs</h1>
-                    {SolutionsNDesignsArr.map(
+                    {getSolutionsNDesignsArr(images).map(
                         ({ imageSrc, title, list, order }) => (
                             <SolutionNDesign
+                                isLoading={!images}
                                 imageSrc={imageSrc}
                                 title={title}
                                 list={list}
@@ -160,14 +180,23 @@ export const SubtitlesSystem = (props: SubtitlesSystemProps) => {
                         />
                         <p className={classes.light}>Light</p>
                     </div>
-                    <Image src="/subtitlesSystem/Colors_1.png" alt="colors 1" />
-                    <Image src="/subtitlesSystem/Colors_2.png" alt="colors 2" />
+                    <LoadingImage
+                        isLoading={!data}
+                        src={images['Colors_1.png']}
+                        alt="colors 1"
+                    />{' '}
+                    <LoadingImage
+                        isLoading={!data}
+                        src={images['Colors_2.png']}
+                        alt="colors 2"
+                    />
                 </section>
                 <section>
                     <h1>Screens</h1>
                     <section className={classes.bigScreens}>
-                        {bigScreensArr.map(({ imageSrc, title }) => (
+                        {getBigScreensArr(images).map(({ imageSrc, title }) => (
                             <Screen
+                                isLoading={!data}
                                 imageSrc={imageSrc}
                                 title={title}
                                 key={crypto.randomUUID()}
@@ -175,17 +204,20 @@ export const SubtitlesSystem = (props: SubtitlesSystemProps) => {
                         ))}
                     </section>
                     <section className={classes.smallScreens}>
-                        {smallScreensArr.map(({ imageSrc, title }) => (
-                            <Screen
-                                imageSrc={imageSrc}
-                                title={title}
-                                key={crypto.randomUUID()}
-                            />
-                        ))}
+                        {getSmallScreensArr(images).map(
+                            ({ imageSrc, title }) => (
+                                <Screen
+                                    isLoading={!data}
+                                    imageSrc={imageSrc}
+                                    title={title}
+                                    key={crypto.randomUUID()}
+                                />
+                            )
+                        )}
                     </section>
                 </section>
                 <div className={classes.Screens}></div>
-            </Image.PreviewGroup>
+            </AntdImage.PreviewGroup>
             <Button
                 className={classes.goUpButton}
                 icon={<UpOutlined />}
