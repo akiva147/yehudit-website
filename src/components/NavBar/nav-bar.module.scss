@@ -3,24 +3,11 @@
     width: 100%;
     align-items: center;
     justify-content: space-between;
-
-    a {
-        display: flex;
-        color: inherit;
-        padding: 0;
-        text-decoration: none;
-    }
     h2 {
         cursor: pointer;
         font-weight: 300;
     }
-    h2:hover,
-    a:hover {
-        transition-duration: 300ms;
-        transition-timing-function: ease-in-out;
-        color: lighten($color: black, $amount: 40%);
-        color: lighten($color: black, $amount: 40%);
-    }
+
     .pages {
         display: flex;
         justify-content: end;
@@ -28,20 +15,60 @@
         gap: 2rem;
     }
 
-    @media (max-width: 760px) {
-        h2 {
-            font-size: 1rem;
-        }
-        .pages {
-            gap: 1rem;
+    // @media (max-width: 760px) {
+    //     h2 {
+    //         font-size: 1rem;
+    //     }
+    //     .pages {
+    //         gap: 1rem;
+    //     }
+    // }
+    // @media (max-width: 430px) {
+    //     h2 {
+    //         font-size: 0.8rem;
+    //     }
+    //     .pages {
+    //         gap: 0.2rem;
+    //     }
+    // }
+}
+h2:hover,
+a:hover {
+    transition-duration: 300ms;
+    transition-timing-function: ease-in-out;
+    color: lighten($color: black, $amount: 40%);
+    color: lighten($color: black, $amount: 40%);
+}
+
+a {
+    display: flex;
+    color: inherit;
+    padding: 0;
+    text-decoration: none;
+}
+
+:global {
+    .ant-drawer .ant-drawer-content-wrapper {
+        max-width: 70vw;
+    }
+    .ant-drawer-body {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        h2,
+        a {
+            cursor: pointer;
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin: 0;
         }
     }
-    @media (max-width: 430px) {
-        h2 {
-            font-size: 0.8rem;
-        }
-        .pages {
-            gap: 0.2rem;
+    .ant-drawer-footer {
+        display: flex;
+        justify-content: space-around;
+        a {
+            font-size: 1.5rem;
         }
     }
 }
