@@ -18,8 +18,11 @@
     }
     & > main {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
+        gap: 5rem;
+        margin-bottom: 5rem;
         & > .project {
             display: flex;
             justify-content: center;
@@ -30,6 +33,7 @@
             & > .displayCard {
                 max-width: 20%;
                 min-width: 20%;
+                height: 100%;
                 & > * {
                     margin: 0.5rem;
                 }
@@ -38,12 +42,21 @@
                     block: 1rem;
                     inline: 2rem;
                 }
+                & > div {
+                    margin: 0;
+                }
                 flex-direction: column;
+                justify-content: space-between;
                 align-items: flex-start;
                 border-radius: 0.5rem;
                 background-color: #fafafa;
             }
         }
+    }
+    .goUpButton {
+        position: fixed;
+        bottom: 1rem;
+        right: 2rem;
     }
     @media (max-width: 1000px) {
         & > header {

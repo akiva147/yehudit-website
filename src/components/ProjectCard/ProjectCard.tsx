@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import classes from './project-card.module.scss'
 import { useScreenSize } from '@/hooks/useSize'
-import { ProjectCard as ProjectCardType } from '@/types/hopePage.type'
+import { ProjectCard as ProjectCardType } from '@/types/homePage.type'
 
 export interface ProjectCardProps extends ProjectCardType {}
 

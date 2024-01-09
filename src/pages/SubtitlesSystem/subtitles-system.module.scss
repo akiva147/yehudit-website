@@ -62,11 +62,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
     }
-    .goUpButton {
-        position: fixed;
-        bottom: 1rem;
-        right: 2rem;
-    }
+
     @media (max-width: 1200px) {
         padding: 5rem;
         // width: 90%;

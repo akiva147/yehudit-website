@@ -1,13 +1,14 @@
 import { useNavigate } from 'react-router-dom'
 import { useScreenSize } from '../../hooks/useSize'
 import classes from './home-page.module.scss'
+import { ProjectCard } from '@/components/ProjectCard'
+import { ProjectCardsArr } from './HomePage.const'
+import { Button } from 'antd'
+import { UpOutlined } from '@ant-design/icons'
 
 export interface HomePageProps {}
 
 export const HomePage = (props: HomePageProps) => {
-    const { width } = useScreenSize()
-    const navigate = useNavigate()
-
     return (
         <div className={classes.container}>
             <header>
@@ -16,22 +17,23 @@ export const HomePage = (props: HomePageProps) => {
                 </h1>
             </header>
             <main>
-                <div
-                    className={classes.project}
-                    onClick={() => navigate('/subtitles-system')}
-                >
-                    {width >= 1600 && (
-                        <div className={classes.displayCard}>
-                            <h2>Subtitles System Design</h2>
-                            <h4>Global Kabbalah Academy</h4>
-                            <h3>UX UI Design</h3>
-                        </div>
-                    )}
-                    <img
-                        src="/subtitlesSystem/SubtitleSystemDesign.png"
-                        alt="Subtitle System Design"
-                    />
-                </div>
+                {ProjectCardsArr.map(
+                    ({
+                        goTo,
+                        imageAlt,
+                        imageSrc,
+                        projectScreenType,
+                        titles,
+                    }) => (
+                        <ProjectCard
+                            goTo={goTo}
+                            imageAlt={imageAlt}
+                            imageSrc={imageSrc}
+                            projectScreenType={projectScreenType}
+                            titles={titles}
+                        />
+                    )
+                )}
             </main>
         </div>
     )

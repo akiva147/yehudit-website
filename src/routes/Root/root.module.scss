@@ -3,4 +3,9 @@
     grid-template-rows: 1fr 12fr 1fr;
     height: 100%;
     width: 100%;
+    .goUpButton {
+        position: fixed;
+        bottom: 1rem;
+        right: 2rem;
+    }
 }

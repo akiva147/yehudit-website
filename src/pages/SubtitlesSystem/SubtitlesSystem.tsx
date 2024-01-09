@@ -168,7 +168,7 @@ export const SubtitlesSystem = (props: SubtitlesSystemProps) => {
                     <div className={classes.colorSizes}>
                         <strong>Bold</strong>
                         <img
-                            src="/general/Ellipse.svg"
+                            src="/Ellipse.svg"
                             alt="Ellipse"
                             style={{ height: '.8rem', width: '2rem' }}
                         />
@@ -218,13 +218,6 @@ export const SubtitlesSystem = (props: SubtitlesSystemProps) => {
                 </section>
                 <div className={classes.Screens}></div>
             </AntdImage.PreviewGroup>
-            <Button
-                className={classes.goUpButton}
-                icon={<UpOutlined />}
-                onClick={() =>
-                    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
-                }
-            />
         </div>
     )
 }

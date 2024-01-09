@@ -25,11 +25,7 @@ export const NavBarTitles = ({
         >
             ABOUT
         </h2>
-        <a
-            href={'/general/Yehudit Levi-Resume.pdf'}
-            target="_blank"
-            rel="noreferrer"
-        >
+        <a href={'/Yehudit Levi-Resume.pdf'} target="_blank" rel="noreferrer">
             <h2>RESUME</h2>
         </a>
     </>
@@ -40,10 +36,10 @@ export const ExternalWebsiteLinks = () => (
             href="https://www.linkedin.com/in/yehudit-levi-5872a71a9?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
             target="_blank"
         >
-            <LinkedinOutlined />
+            <LinkedinOutlined style={{ fontSize: '23px' }} />
         </a>
         <a href="https://www.behance.net/yehuditlevi1/projects" target="_blank">
-            <img src="/general/Behance-logo.svg" />
+            <img src="/Behance-logo.svg" />
         </a>
     </>
 )
