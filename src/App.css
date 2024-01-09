@@ -24,3 +24,8 @@ body {
         padding-inline: 2rem;
     }
 }
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}

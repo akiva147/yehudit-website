@@ -1,16 +1,13 @@
 import { BlobImage } from '@/models/image.model'
-import axios from 'axios'
+import { axoisInstance } from './axios.service'
 
 class ImageService {
     async getImagesByPrefix(prefix: string) {
-        const { data } = await axios.get<BlobImage[]>(
-            'http://localhost:3000/api/blob',
-            {
-                headers: {
-                    prefix,
-                },
-            }
-        )
+        const { data } = await axoisInstance.get<BlobImage[]>('/blob', {
+            headers: {
+                prefix,
+            },
+        })
 
         const images = data.reduce((acc, item) => {
             const splitted = item.pathname.split('/')

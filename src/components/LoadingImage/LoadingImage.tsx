@@ -1,6 +1,6 @@
 import { LoadingOutlined } from '@ant-design/icons'
 import classes from './loading-image.module.scss'
-import { Image } from 'antd'
+import { Image, Skeleton } from 'antd'
 
 export interface LoadingImageProps {
     isLoading: boolean
@@ -8,10 +8,14 @@ export interface LoadingImageProps {
     alt: string
 }
 
-export const antdLoad = (
-    <LoadingOutlined style={{ fontSize: 30, margin: '2rem' }} />
-)
-
 export const LoadingImage = ({ alt, isLoading, src }: LoadingImageProps) => {
-    return <>{isLoading ? antdLoad : <Image src={src} alt={alt} />}</>
+    return (
+        <>
+            {isLoading ? (
+                <Skeleton.Image active />
+            ) : (
+                <Image src={src} alt={alt} />
+            )}
+        </>
+    )
 }

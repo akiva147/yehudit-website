@@ -152,7 +152,7 @@ export const SubtitlesSystem = (props: SubtitlesSystemProps) => {
                     {getSolutionsNDesignsArr(images).map(
                         ({ imageSrc, title, list, order }) => (
                             <SolutionNDesign
-                                isLoading={!images}
+                                isLoading={!data}
                                 imageSrc={imageSrc}
                                 title={title}
                                 list={list}
@@ -184,7 +184,7 @@ export const SubtitlesSystem = (props: SubtitlesSystemProps) => {
                         isLoading={!data}
                         src={images['Colors_1.png']}
                         alt="colors 1"
-                    />{' '}
+                    />
                     <LoadingImage
                         isLoading={!data}
                         src={images['Colors_2.png']}
