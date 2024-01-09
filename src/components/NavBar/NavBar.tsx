@@ -18,7 +18,10 @@ export const NavBar = (props: NavBarProps) => {
             <h2 onClick={() => navigate('/')}>Yehudit Levi</h2>
             {width >= 760 ? (
                 <div className={classes.pages}>
-                    <NavBarTitles navigate={navigate} />
+                    <NavBarTitles
+                        navigate={navigate}
+                        setIsDrawerOpen={setIsDrawerOpen}
+                    />
                     <ExternalWebsiteLinks />
                 </div>
             ) : (
@@ -33,7 +36,10 @@ export const NavBar = (props: NavBarProps) => {
                         closeIcon={false}
                         footer={<ExternalWebsiteLinks />}
                     >
-                        <NavBarTitles navigate={navigate} />
+                        <NavBarTitles
+                            navigate={navigate}
+                            setIsDrawerOpen={setIsDrawerOpen}
+                        />
                     </Drawer>
                 </>
             )}
