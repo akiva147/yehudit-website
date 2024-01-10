@@ -31,6 +31,7 @@ export const HomePage = (props: HomePageProps) => {
                             imageSrc={imageSrc}
                             projectScreenType={projectScreenType}
                             titles={titles}
+                            key={goTo}
                         />
                     )
                 )}

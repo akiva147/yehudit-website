@@ -5,7 +5,8 @@ import { ErrorPage } from './pages/ErrorPage'
 import Root from './routes/Root/Root'
 import { AboutPage } from './pages/AboutPage'
 import { GlobalProvider } from './providers/GlobalProvider'
-import { SubtitlesSystem } from './pages/SubtitlesSystem'
+import { SubtitlesSystemPage } from './pages/SubtitlesSystemPage'
+import { SelfLearnSitePage } from './components/SelfLearnSitePage'
 
 const router = createBrowserRouter([
     {
@@ -23,7 +24,11 @@ const router = createBrowserRouter([
             },
             {
                 path: '/subtitles-system',
-                element: <SubtitlesSystem />,
+                element: <SubtitlesSystemPage />,
+            },
+            {
+                path: '/self-learn-site',
+                element: <SelfLearnSitePage />,
             },
             {
                 path: '*',

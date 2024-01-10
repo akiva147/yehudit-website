@@ -1,9 +1,107 @@
 .container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
+    display: grid;
+    justify-items: center;
     width: 100%;
-    height: 100%;
+    padding-inline: 10rem;
+    gap: 2rem;
+    h1 {
+        font-size: 2rem;
+    }
+    img {
+        align-self: center;
+        width: 80%;
+        // padding: 2rem;
+    }
+    .listWrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    & > section {
+        h1 {
+            margin: 0;
+        }
+        gap: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        width: 60%;
+    }
+    p,
+    li {
+        color: #737373;
+        font-weight: 500;
+    }
+    li {
+        padding: 0.7rem;
+    }
+    .list {
+        background-color: #f7f7f7;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        margin: 1.5rem;
+    }
+    & > section:has(section) {
+        width: 100%;
+        gap: 2rem;
+        align-items: center;
+        h1 {
+            text-align: center;
+        }
+        h5 {
+            margin: 0;
+        }
+    }
+    .colorSizes {
+        display: flex;
+        align-items: center;
+    }
+    .bigScreens {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .smallScreens {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @media (max-width: 1200px) {
+        padding: 5rem;
+        // width: 90%;
+        section {
+            width: 100%;
+        }
+        .smallScreens {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+    @media (max-width: 760px) {
+        align-items: center;
+        padding: 2rem;
+
+        .bigScreens {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+        .smallScreens {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+    }
+    @media (max-width: 430px) {
+        align-items: center;
+        padding: 0rem;
+        width: 100%;
+        section {
+            align-items: center;
+        }
+        .bigScreens {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+        .smallScreens {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+    }
 }
