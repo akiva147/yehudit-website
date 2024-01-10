@@ -4,12 +4,12 @@ import {
     getBigScreensArr,
     getSmallScreensArr,
     getSolutionsNDesignsArr,
-} from './subtitlesSystem.conts'
+} from './subtitlesSystemPage.conts'
 import { SolutionNDesign } from '../../components/SolutionsNDesigns'
 import { Screen } from '../../components/Screen'
 import { UpOutlined } from '@ant-design/icons'
 import { useQuery } from '@tanstack/react-query'
-import classes from './subtitles-system.module.scss'
+import classes from './subtitles-system-page.module.scss'
 import { LoadingImage } from '@/components/LoadingImage'
 import { imageService } from '@/services/image.service'
 import { useMemo } from 'react'
@@ -17,7 +17,7 @@ import { Image } from '@/types/subtitlesSystem.type'
 
 export interface SubtitlesSystemProps {}
 
-export const SubtitlesSystem = (props: SubtitlesSystemProps) => {
+export const SubtitlesSystemPage = (props: SubtitlesSystemProps) => {
     const { data, isLoading } = useQuery({
         queryKey: ['subtitlesSystem'],
         queryFn: async () =>
@@ -34,18 +34,19 @@ export const SubtitlesSystem = (props: SubtitlesSystemProps) => {
         <div className={classes.container}>
             <AntdImage.PreviewGroup>
                 <header>
-                    <h1> Subtitles system</h1>
-                    <h4>Global Kabbalah Academy</h4>
-                    <p>
-                        Global Kabbalah UX UI Design & Business analysis •
-                        Desktop project
-                    </p>
+                    <div className={classes.titles}>
+                        <h1>Subtitles system</h1>
+                        <h4>Global Kabbalah Academy</h4>
+                        <p>
+                            Global Kabbalah UX UI Design & Business analysis •
+                            Desktop project
+                        </p>
+                    </div>
+                    <AntdImage
+                        src={'/SubtitleSystemProject.png'}
+                        alt="Subtitle System Design"
+                    />
                 </header>
-                <LoadingImage
-                    isLoading={!data}
-                    src={images['SubtitleSystemDesign.png']}
-                    alt="Subtitle System Design"
-                />
                 <section>
                     <h1>About the System</h1>
                     <strong>Subtitle System of Global Kabbalah Academy</strong>
@@ -79,46 +80,53 @@ export const SubtitlesSystem = (props: SubtitlesSystemProps) => {
                 />
                 <section>
                     <h1>User Research</h1>
-                    <div className={classes.list}>
-                        <strong>
-                            Challenges Identified Through User Research
-                        </strong>
-                        <ul>
-                            <li>
-                                Prolonged Use Discomfort: Strong red color of
-                                selected slide
-                            </li>
-                            <li>
-                                Limited Search Capabilities: Finding specific
-                                study material time-consuming
-                            </li>
-                            <li>
-                                "Questions" Mode Issues: Manual confirmation of
-                                translation updates and Unclear distinction
-                                between "delete" and "next question"
-                            </li>
-                            <li>
-                                Navigation Problems: Small, inconveniently
-                                placed buttons causing confusion
-                            </li>
-                            <li>
-                                Remote Monitoring Difficulties: Unable to
-                                confirm successful broadcast remotely
-                            </li>
-                        </ul>
-                    </div>
-                    <div className={classes.list}>
-                        <strong>User KPIs</strong>
-                        <ul>
-                            <li>
-                                Intuitive System to reduce cognitive load and
-                                enhance overall user experience
-                            </li>
-                            <li>Optimized Color Schemes for Prolonged Use</li>
-                            <li>Enhanced System Navigation</li>
-                            <li>Efficient Search Functionality</li>
-                            <li>Enable Remote Monitoring of Live Broadcasts</li>
-                        </ul>
+                    <div className={classes.listWrapper}>
+                        <section className={classes.list}>
+                            <strong>
+                                Challenges Identified Through User Research
+                            </strong>
+                            <ul>
+                                <li>
+                                    Prolonged Use Discomfort: Strong red color
+                                    of selected slide
+                                </li>
+                                <li>
+                                    Limited Search Capabilities: Finding
+                                    specific study material time-consuming
+                                </li>
+                                <li>
+                                    "Questions" Mode Issues: Manual confirmation
+                                    of translation updates and Unclear
+                                    distinction between "delete" and "next
+                                    question"
+                                </li>
+                                <li>
+                                    Navigation Problems: Small, inconveniently
+                                    placed buttons causing confusion
+                                </li>
+                                <li>
+                                    Remote Monitoring Difficulties: Unable to
+                                    confirm successful broadcast remotely
+                                </li>
+                            </ul>
+                        </section>
+                        <section className={classes.list}>
+                            <strong>User KPIs</strong>
+                            <ul>
+                                <li>
+                                    Intuitive System to reduce cognitive load
+                                    and enhance overall user experience
+                                </li>
+                                <li>
+                                    Optimized Color Schemes for Prolonged Use
+                                </li>
+                                <li>Enhanced System Navigation</li>
+                                <li>Efficient Search Functionality</li>
+                                <li>
+                                    Enable Remote Monitoring of Live Broadcasts
+                                </li>
+                            </ul>
+                        </section>
                     </div>
                 </section>
                 <section>
