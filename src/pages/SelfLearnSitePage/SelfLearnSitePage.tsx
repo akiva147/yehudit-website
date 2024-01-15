@@ -1,7 +1,7 @@
-import { LoadingImage } from '../LoadingImage'
+import { LoadingImage } from '../../components/LoadingImage'
 import { Button, Image as AntdImage } from 'antd'
 import classes from './self-learn-site-page.module.scss'
-import { Screen } from '../Screen'
+import { Screen } from '../../components/Screen'
 import classNames from 'classnames'
 
 export interface SelfLearnSitePageProps {}

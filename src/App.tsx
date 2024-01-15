@@ -6,7 +6,7 @@ import Root from './routes/Root/Root'
 import { AboutPage } from './pages/AboutPage'
 import { GlobalProvider } from './providers/GlobalProvider'
 import { SubtitlesSystemPage } from './pages/SubtitlesSystemPage'
-import { SelfLearnSitePage } from './components/SelfLearnSitePage'
+import { SelfLearnSitePage } from './pages/SelfLearnSitePage'
 
 const router = createBrowserRouter([
     {
