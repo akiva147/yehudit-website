@@ -182,7 +182,7 @@ export const SubtitlesSystemPage = (props: SubtitlesSystemProps) => {
                         />
                         <p>Medium</p>
                         <img
-                            src="general/Ellipse.svg"
+                            src="/Ellipse.svg"
                             alt="Ellipse"
                             style={{ height: '.8rem', width: '2rem' }}
                         />
