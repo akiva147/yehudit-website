@@ -8,6 +8,15 @@
         font-weight: 300;
     }
 
+    h2 {
+        background: linear-gradient(currentColor 0 0) 0 100% / var(--d, 0) 2px
+            no-repeat;
+        transition: 0.5s;
+    }
+    h2:hover {
+        --d: 100%;
+    }
+
     .pages {
         display: flex;
         justify-content: end;
@@ -32,12 +41,21 @@
     //     }
     // }
 }
-h2:hover,
-a:hover {
+h2:hover {
     transition-duration: 300ms;
     transition-timing-function: ease-in-out;
     color: lighten($color: black, $amount: 40%);
     color: lighten($color: black, $amount: 40%);
+}
+
+a:hover {
+    transition-timing-function: ease-in-out;
+    transform: scale(110%);
+    transition-duration: 400ms;
+}
+
+a:has(h2):hover {
+    transform: unset;
 }
 
 a {
